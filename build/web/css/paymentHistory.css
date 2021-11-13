@@ -1,0 +1,33 @@
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    color: white;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+    background-color: #7C83FD;
+    
+}
+
+.content-table{
+    margin: 20px auto;
+    
+}
+
+.containerHistory {
+    gap: 10px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 70px;
+    grid-template-areas: "nav""contentAbout""footer";
+}
+
+
+.table-data{
+    border-bottom: 1px solid white;
+}

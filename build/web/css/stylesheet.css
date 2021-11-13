@@ -1,0 +1,989 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.644)), url(../img/bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 80px);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.checkbtn {
+    font-size: 30px;
+    line-height: 70px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+nav {
+    background: #00559a;
+    background-image: url(../img/group_2.png);
+    background-position: 150px;
+    background-size: 60px;
+    background-repeat: no-repeat;
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+    width: 100vw;
+}
+
+nav ul {
+    float: right;
+    margin-right: 70px;
+}
+
+nav ul li {
+    padding-top: 25px;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: whitesmoke;
+    text-align: left;
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+a.active,
+a:hover {
+    background: #af77d5;
+    transition: .5s;
+}
+
+.container {
+    gap: 10px;
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 250px 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nav""header""janjiContainer""temukanContainer""feedbackContainer""footer";
+    box-sizing: border-box;
+}
+
+.header {
+    margin-left: 10%;
+    margin-right: 50%;
+    grid-area: header;
+    text-align: left;
+    text-shadow: 2px 2px 2px black;
+    color: whitesmoke;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-bottom: whitesmoke;
+    border-bottom-style: solid;
+    border-width: medium;
+}
+
+.janjiContainer {
+    text-shadow: 2px 2px 2px black;
+    color: whitesmoke;
+    gap: 10px;
+    font-family: sans-serif;
+    justify-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    grid-area: janjiContainer;
+    display: grid;
+    grid-template-columns: .2fr .2fr .2fr;
+    grid-template-rows: .28fr .7fr;
+    grid-template-areas: "janjiHeader janjiHeader janjiHeader""waktu antar harga";
+}
+
+.janjiHeader {
+    grid-area: janjiHeader;
+}
+
+.waktu,
+.antar,
+.harga {
+    border-radius: 10px;
+    gap: 10px;
+    transition: transform .2s;
+    padding: 10px;
+    text-align: center;
+    grid-area: waktu;
+    justify-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: .7fr;
+    grid-template-rows: 90px .7fr;
+    grid-template-areas: "janjiIcon""janjiText";
+}
+
+.antar {
+    grid-area: antar;
+}
+
+.harga {
+    grid-area: harga;
+}
+
+.waktu:hover,
+.antar:hover,
+.harga:hover {
+    -ms-transform: scale(1.2);
+    /* IE 9 */
+    -webkit-transform: scale(1.2);
+    /* Safari 3-8 */
+    transform: scale(1.2);
+}
+
+.janjiIcon {
+    color: #af77d5;
+    grid-area: janjiIcon;
+    font-size: 80px;
+}
+
+.janjiText {
+    grid-area: janjiText;
+    font-size: 20px;
+}
+
+.temukanContainer {
+    text-shadow: 2px 2px 2px black;
+    color: whitesmoke;
+    font-family: sans-serif;
+    justify-items: center;
+    grid-area: temukanContainer;
+    margin-top: 40px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 500px;
+}
+
+.feedbackContainer {
+    justify-content: center;
+    grid-area: feedbackContainer;
+    font-family: sans-serif;
+    justify-items: center;
+    margin-top: 20px;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 300px 300px;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: "feedbackHeader feedbackHeader""feedbackContent1 feedbackContent2";
+}
+
+.feedbackHeader {
+    text-shadow: 2px 2px 2px black;
+    color: whitesmoke;
+    grid-area: feedbackHeader;
+}
+
+.feedbackContent1,
+.feedbackContent2 {
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    opacity: .8;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    grid-area: feedbackContent1;
+    font-family: sans-serif;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 20px 100px 40px;
+    transition: transform .2s;
+}
+
+.feedbackContent2 {
+    grid-area: feedbackContent2;
+}
+
+.feedbackContent1:hover,
+.feedbackContent2:hover {
+    -ms-transform: scale(1.3);
+    /* IE 9 */
+    -webkit-transform: scale(1.3);
+    /* Safari 3-8 */
+    transform: scale(1.3);
+}
+
+.footer {
+    margin-top: 15px;
+    grid-area: footer;
+    width: 100%;
+    padding: 10px;
+    color: whitesmoke;
+    ;
+    text-align: center;
+    background: #00559a;
+    font-size: 13px;
+}
+
+h2 {
+    font-size: 30px;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+/* css contact */
+
+.contactForm {
+    width: 80%;
+    min-height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.contactContainer {
+    text-align: center;
+    justify-items: center;
+    font-family: sans-serif;
+    gap: 10px;
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 70px 1fr 1fr 1fr 1fr;
+    grid-template-areas: "nav""clean""contactUs""iconContact""contactForm""footer";
+}
+
+.contactForm h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.contactForm .inputBox {
+    margin-top: 1rem;
+}
+
+.contactForm .inputBox label {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+.contactForm .inputBox input[name="name"],
+.contactForm .inputBox input[name="email"],
+.contactForm .inputBox textarea {
+    margin-top: .5rem;
+    padding: .5rem;
+    width: 20rem;
+    border: 2px solid #af77d5;
+    outline: none;
+    border-radius: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1rem;
+    letter-spacing: .5px;
+}
+
+.contactForm .inputBox input[name="name"],
+.contactForm .inputBox input[name="email"] {
+    height: 2rem;
+}
+
+.contactForm .inputBox textarea {
+    height: 8rem;
+}
+
+.contactForm .inputBox button {
+    display: block;
+    width: 5rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    background-color: #af77d5;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 1rem;
+    transition: all .2s;
+}
+
+.contactForm .inputBox button:hover {
+    display: block;
+    width: 5rem;
+    height: 2.5rem;
+    margin: 0 auto;
+    background-color: #fff;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    color: #af77d5;
+    font-size: 1rem;
+}
+
+.content {
+    margin: 0 auto 3rem;
+    text-align: center;
+    color: #fff;
+    width: 80%;
+}
+
+.contactUs {
+    padding: 20px;
+    margin-top: 30px;
+    color: whitesmoke;
+    grid-area: contactUs;
+    width: 100vw;
+}
+
+.iconContact {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    grid-area: iconContact;
+    text-align: center;
+    justify-items: center;
+    font-family: sans-serif;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "address mail phone";
+}
+
+.address,
+.mail,
+.phone {
+    border-radius: 10px;
+    gap: 10px;
+    padding: 10px;
+    text-align: center;
+    grid-area: address;
+    justify-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: .7fr;
+    grid-template-rows: 80px .7fr;
+    grid-template-areas: "contactIcon""contactText";
+}
+
+.mail {
+    grid-area: mail;
+}
+
+.phone {
+    grid-area: phone;
+}
+
+.contactIcon {
+    color: #af77d5;
+    font-size: 70px;
+}
+
+.contactText {
+    color: whitesmoke;
+}
+
+.clean {
+    font-size: 2rem;
+    margin-left: 0%;
+    grid-area: clean;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 2px 2px 2px black;
+}
+
+.formContact {
+    margin-top: 10px;
+    grid-area: formContact;
+    color: whitesmoke;
+}
+
+.containers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactInfo {
+    width: 80%;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    text-align: center;
+    width: 10rem;
+}
+
+.box h3 {
+    margin-bottom: 1rem;
+}
+
+.icon {
+    margin-bottom: 1rem;
+}
+
+
+/*About Us*/
+
+.containerAbout {
+    gap: 10px;
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 70px;
+    grid-template-areas: "nav""contentAbout""footer";
+}
+
+.contentAbout {
+    grid-area: contentAbout;
+    font-family: sans-serif;
+    text-align: justify;
+    gap: 10px;
+    display: grid;
+    grid-template-columns: .5fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "slide aboutus";
+}
+
+.slide {
+    padding: 10px;
+    grid-area: slide;
+    margin-left: 10%;
+}
+
+.aboutus h2 {
+    margin-top: 5%;
+    text-align: center;
+    text-shadow: 2px 2px 2px black;
+}
+
+.aboutus p {
+    margin-top: 3%;
+    padding: 20px;
+}
+
+.aboutus {
+    margin-top: 10%;
+    padding: 10px;
+    grid-area: aboutus;
+    color: whitesmoke;
+    text-align: justify;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+/*Responsive*/
+
+@media only screen and (max-width:550px) {
+    .container {
+        gap: 10px;
+        display: grid;
+        height: 100vh;
+        width: 100%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 200px 1fr 1fr 1fr 1fr;
+        grid-template-areas: "nav""header""janjiContainer""temukanContainer""feedbackContainer""footer";
+        box-sizing: border-box;
+    }
+    .checkbtn {
+        display: block;
+    }
+    nav {
+        background-position: 70px;
+        width: 100%;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        background: #00559a;
+        top: 70.4px;
+        left: -100%;
+        transition: all .5s;
+    }
+    nav ul li {
+        line-height: 50px;
+        display: block;
+    }
+    nav ul li a {
+        font-size: 17px;
+    }
+    #check:checked~ul {
+        left: 0;
+    }
+    .header {
+        font-size: 20px;
+    }
+    .janjiContainer {
+        text-align: center;
+        gap: 10px;
+        font-family: sans-serif;
+        justify-items: center;
+        justify-content: center;
+        margin-top: 50px;
+        grid-area: janjiContainer;
+        display: grid;
+        grid-template-columns: .5fr;
+        grid-template-rows: .28fr .1fr .1fr .1fr;
+        grid-template-areas: "janjiHeader""waktu""antar""harga";
+    }
+    h2 {
+        font-size: 25px;
+    }
+    .temukanContainer {
+        justify-content: center;
+        font-family: sans-serif;
+        justify-items: center;
+        grid-area: temukanContainer;
+        margin-top: 90px;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 50px 400px;
+    }
+    .feedbackContainer {
+        margin-top: 100px;
+        grid-template-columns: 300px;
+        grid-template-rows: 50px 1fr 1fr;
+        grid-template-areas: "feedbackHeader""feedbackContent1""feedbackContent2";
+    }
+    .footer {
+        width: 100vw;
+    }
+    iframe {
+        width: 90vw;
+    }
+    .waktu,
+    .antar,
+    .harga {
+        margin-top: 30px;
+        gap: 0px;
+    }
+    .containerAbout {
+        grid-template-rows: 70px 1fr 1fr;
+    }
+    .contentAbout {
+        grid-area: contentAbout;
+        text-align: justify;
+        gap: 10px;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "aboutus";
+    }
+    .slide {
+        display: none;
+    }
+    .aboutus h2 {
+        margin-top: 0%;
+    }
+}
+
+
+/* pricelist */
+
+.brdr {
+    width: 800px;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    margin-left: 200px;
+    margin-right: 100px;
+    border-radius: 40px;
+    background-color: #1A2B2E;
+    padding: 20px;
+    overflow: hidden;
+    grid-area: brdr;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.644), rgba(0, 0, 0, 0.644)), url(../img/bg2.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: calc(100vh - 80px);
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+
+.tabel-harga {
+    margin: 20px;
+    width: 700px;
+    border-top: 2px solid #bfb;
+}
+
+input[type=checkbox]+label {
+    display: block;
+    font-size: 20px;
+    color: azure;
+    margin: 2em;
+    cursor: pointer;
+    padding: 0.2em;
+    align-items: center;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]+label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-left: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+input[type=checkbox]+label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox]:checked+label:before {
+    background-color: mediumseagreen;
+    color: aliceblue;
+    border-color: mediumseagreen;
+}
+
+input[type=checkbox]:disabled+label:before {
+    transform: scale(1);
+    border-color: #aaa;
+}
+
+input[type=checkbox]:checked:disabled+label:before {
+    transform: scale(1);
+    background-color: #bfb;
+    border-color: #bfb;
+}
+
+.containerForm {
+    gap: 10px;
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1500px;
+    grid-template-areas: "nav""brdr";
+    box-sizing: border-box;
+}
+
+
+/*pemabatas*/
+
+input[type=checkbox2]+label {
+    display: block;
+    font-size: 20px;
+    color: azure;
+    margin: 2em;
+    cursor: pointer;
+    padding: 0.2em;
+    align-items: center;
+}
+
+input[type=checkbox2] {
+    display: none;
+}
+
+input[type=checkbox2]+label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-left: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+}
+
+input[type=checkbox2]+label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox2]:checked+label:before {
+    background-color: mediumseagreen;
+    color: aliceblue;
+    border-color: mediumseagreen;
+}
+
+input[type=checkbox2]:disabled+label:before {
+    transform: scale(1);
+    border-color: #aaa;
+}
+
+input[type=checkbox2]:checked:disabled+label:before {
+    transform: scale(1);
+    background-color: #bfb;
+    border-color: #bfb;
+}
+
+.header {
+    padding: 15px;
+}
+
+.header span {
+    display: block;
+    text-align: left;
+    font-size: 2rem;
+}
+
+.paket {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-bottom: 5px;
+}
+
+.paket1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 80px;
+    margin-bottom: 5px;
+}
+
+.paket2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-left: 160px;
+    margin-bottom: 5px;
+}
+
+.header-gratis {
+    margin-top: 10px;
+    border-bottom: 2px solid rgb(80, 216, 91);
+    width: 550px;
+    color: rgb(255, 255, 255);
+}
+
+.pengantaran {
+    border-bottom: 2px solid #bfb;
+}
+
+.deskripsi {
+    margin-top: 40px;
+    border-radius: 20px;
+    border: 1px solid gainsboro;
+    background-color: rgb(0, 219, 146);
+    width: 700px;
+}
+
+.deskripsi h3 {
+    padding: 15px;
+    margin: 0 9px 0 9px;
+    color: #ffffff;
+}
+
+.deskripsi ul {
+    list-style-type: decimal;
+}
+
+.deskripsi ul li {
+    list-style-type: decimal;
+    padding: 10px;
+    margin: 0 75px 0 75px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.ruang-tombol {
+    padding: 10px;
+}
+
+.selengkapnya {
+    float: right;
+    padding: 15px;
+    margin: 0 0 0 700px;
+    width: 30%;
+    text-decoration: none;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    display: block;
+    border-radius: 20px;
+    background-color: rgb(0, 219, 146);
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.selengkapnya1 {
+    float: right;
+    padding: 15px;
+    margin: 0 0 0 10px;
+    width: 30%;
+    text-decoration: none;
+    margin-bottom: 50px;
+    display: block;
+    border-radius: 20px;
+    background-color: rgb(0, 219, 146);
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+
+.selengkapnya:hover {
+    transition-duration: 0.8s;
+    background-color: #bfb;
+}
+
+.price {
+    margin-top: 30px;
+    border-top: 2px solid #bfb;
+}
+
+.txt {
+    float: left;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    color: #ffffff;
+}
+
+.jumlah {
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 50px;
+    color: #ffffff;
+}
+
+
+/* .date-picker {
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+    height: 60px;
+    background-color: #ffffff;
+    margin: 30px auto;
+    box-shadow: 0px 3px 10px rgba(141, 87, 87, 0.2);
+    cursor: pointer;
+    user-select: none;
+}
+
+.date-picker :hover {
+    background-color: #f3f3f3;
+}
+
+.date-picker .selected-date {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+    font-size: 20px;
+}
+
+.date-picker .dates {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+}
+
+.date-picker .dates.active {
+    display: block;
+}
+
+.date-picker .dates .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #eee;
+}
+
+.date-picker .dates .month .arrows {
+    width: 35%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+    font-size: 20px;
+}
+
+.date-picker .dates .month .arrows:hover {
+    background-color: #f3f3f3;
+}
+
+.date-picker .dates .month .arrows:active {
+    background-color: #00ca85;
+}
+
+.date-picker .dates .days {
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.date-picker .dates .days .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+}
+
+.date-picker .dates .days .day.selected {
+    background-color: #00ca85;
+} */
+
+.tanggal1 {
+    padding: 0;
+    margin-top: 40px;
+    margin-left: 20px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.tanggal2 {
+    padding: 0;
+    margin-top: 40px;
+    margin-left: 5px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.containerLogin {
+    gap: 10px;
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 1fr 70px;
+    grid-template-areas: "nav""list""footer";
+    box-sizing: border-box;
+}
+
+.loginList{
+    margin-top: 100px;
+    grid-area: list;
+    text-align: center;
+}
+
+.loginList a{
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 5px;
+    color: white;
+    font-family: sans-serif;
+}
